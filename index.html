@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PWA</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
+  
+  <meta name="theme-color" content="white"/>  
+
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="images/icon-96.png"> 
+  <link rel="apple-touch-icon" href="images/icon-152.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white"> 
+  <meta name="apple-mobile-web-app-title" content="PWA"> 
+  <meta name="apple-mobile-web-app-capable" content="yes">  
+ 
+  <!-- ms support -->
+  <meta name="msapplication-TileImage" content="images/icon-144.png">  
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+
+  <!-- SEO -->
+  <meta name="Description" content="PWA an Progressive Web App">
+
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+  <!-- Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="images/icon-128.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Firebase PWA Users DB
+    </a>
+    <button type="button" class="btn btn-primary btn-x" onClick="showUserModal()">Add</button>
+  </nav>
+
+  <!-- Container -->
+  <div class="container-fluid">
+    <div class="row p-1">
+      <!-- List -->
+      <ul class="list-group w-100"></ul>
+    </div>
+    
+  <!-- Modal -->
+  </div>
+    <div class="modal fade" id="userModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">User</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form onsubmit="addEditUser(event)">
+              <div class="form-group">
+                <label>First Name</label>
+                <input id="myInput" type="text" name="firstname" class="form-control" placeholder="">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastname" class="form-control" placeholder="">
+              </div>
+              <button type="button" class="btn btn-secondary btn-x" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary btn-x">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDPSk459rKzkdBTHNmwizzG0oH4ZuqKTzA",
+      authDomain: "molten-verve-224013.firebaseapp.com",
+      databaseURL: "https://molten-verve-224013.firebaseio.com",
+      projectId: "molten-verve-224013",
+      storageBucket: "molten-verve-224013.appspot.com",
+      messagingSenderId: "289391311046",
+      appId: "1:289391311046:web:d7b735ca0a5cc684debfc7"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script> 
+  <script src="js/db.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
