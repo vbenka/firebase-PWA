@@ -1,6 +1,6 @@
 window.onload = () => {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../sw.js')
+    navigator.serviceWorker.register('../sw-firebase-pwa.js')
       .then((reg) => console.log('sw registered', reg))
       .then(() => registerUserModal())
       .catch((err) => console.log('sw not registered', err));
