@@ -1,18 +1,19 @@
 const staticCache = 'static-pwa-v2';
-const dynamicCache = 'dynamic-pwa-v2';
+const dynamicCache = 'dynamic-pwa-v1';
 const assets = [
   './',
   './index.html',
   './favicon.ico',
   './css/style.css',
-  './css/bootstrap.min.css',
-  './js/jquery-3.3.1.slim.min.js',
-  './js/bootstrap.min.js',
   './js/db.js',
   './js/ui.js',
   './js/main.js',
   './pages/fallback.html',
   './images/noimage-250.png',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+  'https://code.jquery.com/jquery-3.3.1.slim.min.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
 ];
 
 self.addEventListener('install', e => {
